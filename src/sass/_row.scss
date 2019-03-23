@@ -1,0 +1,22 @@
+.row {
+
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    &__4 {
+
+        @include for-tablet {
+            box-sizing: border-box;
+            width: 33.333333333%;
+        }
+    }
+
+    &__8 {
+
+        @include for-tablet {
+            box-sizing: border-box;
+            width: 66.66666666%;
+            padding-left: 20px;
+        }
+    }
+}

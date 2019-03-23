@@ -2,6 +2,9 @@ const {watch, series} = require('gulp');
 const gulp = require('gulp');
 const server = require('browser-sync').create();
 const sass = require('gulp-sass');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const cleancss = require('gulp-clean-css');
 
 //BROWSER
 // ====================================
@@ -29,6 +32,8 @@ function watchTask() {
 	watch("./src/sass/**/*.scss", function() {
 		return gulp.src("./src/sass/**/*.scss")
 			.pipe(sass().on('error', sass.logError))
+			.pipe(postcss([autoprefixer()]))
+			.pipe(cleancss())
 			.pipe(gulp.dest('./dist/css'))
 			.pipe(server.stream());
 	});
