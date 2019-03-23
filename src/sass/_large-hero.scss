@@ -1,0 +1,43 @@
+.large-hero {
+    position: relative;
+
+    &__text-content {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    &__title {
+        font-weight: 300;
+        color: $main-blue;
+        margin: 0;
+        font-size: 2rem;
+
+        @include for-tablet {
+            font-size: 4.8rem;
+        }
+    }
+
+    &__subtitle {
+        @extend .large-hero__title;
+        font-size: 1.2rem;
+
+        @include for-tablet {
+            font-size: 3rem;
+        }
+    }
+
+    &__description {
+        color: $white;
+        font-size: 1.1rem;
+        font-weight: 300;
+        text-shadow: 1px 1px 0 rgba(0,0,0,.1);
+
+        @include for-tablet {
+            font-size: 1.5rem;
+        }
+    }
+}
